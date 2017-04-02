@@ -1,0 +1,36 @@
+<!-- Modal -->
+<div id="add_folder" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header login-header">
+				<button type="button" class="close" data-dismiss="modal">×</button>
+				<h4 class="modal-title">Add New Folder</h4>
+			</div>
+			<div class="modal-body">
+				<input type="text" class="form-control" placeholder="Enter The Folder Title..." ng-model="newFolders.folder_name">
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="cancel btn btn-danger" data-dismiss="modal">Close</button>
+				<button type="button" class="add-folder btn btn-primary" data-dismiss="modal" ng-click="createNewFolder()">Save</button>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<article class="wrapper">
+
+	<aside class="sidebar">
+		<ul class="sidebar-nav">
+			<li ng-repeat="folder in folders"><a ui-sref="main.dashboard.module({id: folder.name})" data-toggle="tab"><span>{{folder.name}}</span></a></li>
+			<li><a href="" class="add-project btn btn-primary" data-toggle="modal" data-target="#add_folder"><span>{{addFolderText}}</span></a></li>
+		</ul>
+	</aside>
+
+<section class="main">
+	<section class="tab-content">
+		<div ui-view=""></div>
+	</section>
+</section>

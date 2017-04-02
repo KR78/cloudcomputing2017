@@ -1,0 +1,36 @@
+<nav class="navbar navbar-default navbar-fixed-top topbar">
+	<div class="container-fluid">
+
+		<div class="navbar-header">
+
+			<a href="#" class="navbar-brand">
+				<span class="visible-xs">DC</span>
+				<span class="hidden-xs">Drop Cloud</span>
+			</a>
+
+		</div>
+
+		<div class="navbar-collapse collapse" id="navbar-collapse-main">
+
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+					<button class="navbar-btn" data-toggle="dropdown">
+						<img ng-src="{{user.avatar? user.avatar : 'images/dropdownbutton.png'}}" class="img-circle">
+					</button>
+					<ul class="dropdown-menu">
+						<li><a ui-sref="main.account">Account</a></li>
+						<li><a ui-sref="main.dashboard">Dashboard</a></li>
+						<li class="nav-divider"></li>
+						<li><a style="cursor:pointer;" type="button" ng-click="signout()">Logout</a></li>
+					</ul>
+				</li>
+			</ul>
+			<form class="navbar-form navbar-right">
+				<input type="text" class="form-control" placeholder="Search...">
+			</form>
+		</div>
+	</div>
+</nav>
+<section class="main">
+	<div ui-view=""></div>
+</section>
